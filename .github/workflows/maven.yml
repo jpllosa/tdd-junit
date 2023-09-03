@@ -25,6 +25,7 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: console.log(context)
+          github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Labeller
         if: ${{ failure() }}
         uses: actions/github-script@v6
@@ -36,5 +37,6 @@ jobs:
               pull_number: context.repo.pull_number,
               message: "It is a mortal sin to PR a broken build!"
             })
+          github-token: ${{ secrets.GITHUB_TOKEN }}
     
     
