@@ -36,7 +36,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               pull_number: ${{ github.event.number }},
-              commit_id: ${{ githug.sha }},
+              commit_id: ${{ github.sha }},
               path: ".",
               body: "It is a mortal sin to PR a broken build! :rage:"
             })
