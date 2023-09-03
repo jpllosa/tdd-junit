@@ -1,6 +1,7 @@
 package com.blogspot.jpllosa;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,6 +21,11 @@ public class MathFunTest {
 		MathFun mf = new MathFun();
 		
 		assertEquals(6, mf.getGCF(0, 6));
+	}
+	
+	@Test
+	public void testThatFails() {
+		fail("Not yet implemented");
 	}
 
 }
