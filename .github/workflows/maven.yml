@@ -37,7 +37,7 @@ jobs:
               repo: context.repo.repo,
               pull_number: ${{ github.event.number }},
               review_id: ${{ github.repository_id }},
-              event: "REQUEST_CHANGES"
+              event: "REQUEST_CHANGES",
               body: "It is a mortal sin to PR a broken build! :rage:"
             })
           github-token: ${{ secrets.GITHUB_TOKEN }}
