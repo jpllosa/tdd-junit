@@ -24,7 +24,7 @@ jobs:
       - name: View context attributes
         uses: actions/github-script@v6.4.1
         with:
-          script: return context
+          script: console.log(JSON.stringify(context))
           github-token: ${{ secrets.GITHUB_TOKEN }}
           debug: true
       - name: Labeller
