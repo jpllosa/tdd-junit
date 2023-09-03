@@ -32,12 +32,12 @@ jobs:
         uses: actions/github-script@v6.4.1
         with:
           script: |
-            github.rest.pulls.submitReview({
+            github.rest.pulls.createReviewComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
               pull_number: ${{ github.event.number }},
-              review_id: ${{ github.repository_id }},
-              event: "REQUEST_CHANGES",
+              commit_id: ${{ githug.sha }},
+              path: ".",
               body: "It is a mortal sin to PR a broken build! :rage:"
             })
           github-token: ${{ secrets.GITHUB_TOKEN }}
