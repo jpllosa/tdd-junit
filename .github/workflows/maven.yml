@@ -24,8 +24,7 @@ jobs:
       - name: View context attributes
         uses: actions/github-script@v6.4.1
         with:
-          script: |
-            console.log("The context: ")
+          script: return context
           github-token: ${{ secrets.GITHUB_TOKEN }}
           debug: true
       - name: Labeller
@@ -33,12 +32,13 @@ jobs:
         uses: actions/github-script@v6.4.1
         with:
           script: |
-            github.rest.pulls.dismissReview({
+            github.rest.pulls.submitReview({
               owner: context.repo.owner,
               repo: context.repo.repo,
               pull_number: ${{ github.event.number }},
               review_id: ${{ github.repository_id }},
-              message: "It is a mortal sin to PR a broken build!"
+              event: REQUEST_CHANGES
+              body: "It is a mortal sin to PR a broken build! :rage:"
             })
           github-token: ${{ secrets.GITHUB_TOKEN }}
           debug: true
