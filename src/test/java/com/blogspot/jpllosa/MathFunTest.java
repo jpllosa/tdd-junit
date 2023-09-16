@@ -23,9 +23,9 @@ public class MathFunTest {
 		assertEquals(6, mf.getGCF(0, 6));
 	}
 	
-//	@Test
-//	public void testThatFails() {
-//		fail("Not yet implemented");
-//	}
+	@Test
+	public void testThatFails() {
+		fail("Not yet implemented");
+	}
 
 }
