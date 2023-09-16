@@ -22,6 +22,7 @@ jobs:
       - name: Build with Maven
         run: mvn -B clean package
       - name: View context attributes
+        if: ${{ failure() }}
         uses: actions/github-script@v6.4.1
         with:
           script: |
