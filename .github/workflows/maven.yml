@@ -25,11 +25,11 @@ jobs:
         uses: actions/github-script@v6.4.1
         with:
           script: |
-            console.log(context.issue.owner);
-            console.log(context.issue.repo);
-            console.log(context.issue.number);
-            console.log(context.repo.owner);
-            console.log(context.rep.repo);
+            core.info(context.issue.owner);
+            core.info(context.issue.repo);
+            core.info(context.issue.number);
+            core.info(context.repo.owner);
+            core.info(context.rep.repo);
           github-token: ${{ secrets.GITHUB_TOKEN }}
           debug: true
       - name: Labeller
