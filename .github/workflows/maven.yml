@@ -30,7 +30,8 @@ jobs:
             core.info(context.issue.repo);
             core.info(context.issue.number);
             core.info(context.repo.owner);
-            core.info(context.rep.repo);
+            core.info(context.repo.repo);
+            console.log(context);
           github-token: ${{ secrets.GITHUB_TOKEN }}
           debug: true
       - name: Labeller
