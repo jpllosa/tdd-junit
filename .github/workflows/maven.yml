@@ -42,16 +42,9 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               pull_number: context.payload.pull_request.number,
-              comments: [
-                {
-                  path: ".",
-                }
-              ],
-              comments: [
-                {
-                  body: "It is a mortal sin to PR a broken build! :rage:"
-                }
-              ],
+              event: "COMMENT",
+              body: "It is a mortal sin to PR a broken build! :rage:",
+              comments: [],
             })
           github-token: ${{ secrets.GITHUB_TOKEN }}
           debug: true
